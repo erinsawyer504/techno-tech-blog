@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
 
+
+
 router.get('/', withAuth, async (req, res) => {
   try {
     // store the results of the db query in a variable called postData. should use something that "finds all" from the Post model. may need a where clause!
