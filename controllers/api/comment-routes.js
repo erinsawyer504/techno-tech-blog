@@ -2,6 +2,11 @@ const router = require('express').Router();
 const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
+
+//TODO get all comments
+//TODO delete a comment
+
+//Creates new comments
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -13,5 +18,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;

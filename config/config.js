@@ -12,3 +12,6 @@ const sequelize = process.env.JAWSDB_URL
     });
 
 module.exports = sequelize;
+
+
+//TODO nothing to be done here
