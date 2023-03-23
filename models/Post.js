@@ -1,3 +1,25 @@
-// you'll have to create a Post model that defines all properties that a post could have.
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-// using sequelize, maybe we could create an id for the Post model, a title, a postBody, postedBy
+class Post extends Model {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = Post;

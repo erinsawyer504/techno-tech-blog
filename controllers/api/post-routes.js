@@ -2,6 +2,12 @@ const router = require('express').Router();
 const { Post } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
+//TODO get all posts
+//TODO get a post by id
+//TODO create new post
+//TODO update a post
+//TODO delete a post
+
 // this would be http://localhost:3001/api/posts
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;

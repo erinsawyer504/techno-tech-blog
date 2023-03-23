@@ -1,6 +1,13 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//TODO create new user
+//TODO get users
+//TODO get user by id
+//TODO log in for user
+//todo log out 
+
+
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
