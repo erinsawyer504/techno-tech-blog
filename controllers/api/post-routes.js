@@ -9,13 +9,13 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      attributes: ['id', 'postText', 'title', 'createdAt'], 
+      attributes: ['id', 'post_body', 'title', 'created_at'], 
       // show newest posts first
-      order: [['createdAt', 'DESC']],
+      order: [['created_at', 'DESC']],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'], 
+          attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'], 
           include: {
             model: User,
             attributes: ['username']
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'postText', 'title', 'createdAt'],
+      attributes: ['id', 'post_body', 'title', 'created_at'],
       include: [
         {
           model: User,
@@ -49,7 +49,7 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -74,7 +74,7 @@ router.post('/', withAuth, async (req, res) => {
   const body = req.body;
 
   try {
-    const newPost = await Post.create({ ...body, userId: req.session.userId });
+    const newPost = await Post.create({ ...body, user_id: req.session.user_id });
     res.json(newPost);
   } catch (err) {
     res.status(500).json(err);

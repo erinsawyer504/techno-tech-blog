@@ -12,14 +12,11 @@ router.get('/', withAuth, async (req, res) => {
         userId: req.session.userId
       },
       attributes: [
-        'id',
-        'postText',
-        'title'
-      ],
+        'id', 'post_body', 'title'],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -64,10 +61,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         id: req.params.id
       },
       attributes: [
-        'id',
-        'postText',
-        'title',
-        'createdAt'
+        'id', 'post_body', 'title', 'created_at'
       ],
       include: [
         {
@@ -76,7 +70,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']

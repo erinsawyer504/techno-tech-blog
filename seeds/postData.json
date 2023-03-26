@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "id": 1,
+        "title": "I like cats",
+        "post_body": "They are so fuzzy and cute.",
+        "user_id": 1
+    },
+    {
+        "id": 2,
+        "title": "I'm a Cat",
+        "post_body": "I like to sleep and eat all day long.",
+        "user_id": 2
+    }
+]

@@ -18,17 +18,17 @@ Post.init(
                 len:[1]
             }
         },
-        postText: {
+        post_body: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len:[1]
             }
         },
-        userId: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'User',
                 key: 'id'
             }
         }
