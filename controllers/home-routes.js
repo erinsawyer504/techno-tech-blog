@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 
+//TODO ready for testing
 // get all posts for homepage
 router.get('/', async (req, res) => {
   try {
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId'],
+          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']

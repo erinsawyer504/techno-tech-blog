@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-
+//TODO ready for testing
 //Getting all the comments
 router.get('/', async (req, res) => {
   try {
