@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
 
-
+//TODO ready for testing
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -19,7 +19,7 @@ router.get('/', withAuth, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId'],
+          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -66,7 +66,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       attributes: [
         'id',
         'postText',
-        'title'
+        'title',
+        'createdAt'
       ],
       include: [
         {
@@ -75,7 +76,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'commentText', 'postId', 'userId'],
+          attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
