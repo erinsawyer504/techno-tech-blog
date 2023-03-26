@@ -1,9 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 
 //TODO ready for testing
 
+
+//TODO find all users working
 //find all users
 router.get('/', async (req, res) => {
   try {

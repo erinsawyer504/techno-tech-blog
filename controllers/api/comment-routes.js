@@ -1,9 +1,11 @@
 const router = require('express').Router();
-const { Comment } = require('../../models/');
+const { Comment, Post, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 //TODO ready for testing
 //Getting all the comments
+
+//TODO need to update findall function
 router.get('/', async (req, res) => {
   try {
     const commentData = await Comment.findall({});
