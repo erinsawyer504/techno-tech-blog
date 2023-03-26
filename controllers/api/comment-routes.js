@@ -3,9 +3,6 @@ const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 
-//TODO get all comments
-//TODO delete a comment
-
 //Getting all the comments
 router.get('/', async (req, res) => {
   try {
