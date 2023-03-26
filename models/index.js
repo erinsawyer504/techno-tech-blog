@@ -5,37 +5,38 @@ const Comment = require('./Comment');
 
 //users can make many posts
 User.hasMany(Post, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id',
+
 });
 
 //user can have many comments
 User.hasMany(Comment, {
-  foreignKey: 'postId',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  // onDelete: 'CASCADE'
 });
 
 // post belongs to one user
 Post.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  // onDelete: 'CASCADE'
 });
 
 //Posts have many comments
 Post.hasMany(Comment, {
-  foreignKey: 'postId',
-  onDelete: 'CASCADE'
+  foreignKey: 'post_id',
+  // onDelete: 'CASCADE'
 });
 
 //A comment only belongs to one user
 Comment.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  // onDelete: 'CASCADE'
 });
 
 //comment belongs to one post
 Comment.belongsTo(Post, {
-  foreignKey: 'postId',
-  onDelete: 'CASCADE'
+  foreignKey: 'post_id',
+  // onDelete: 'CASCADE'
 })
 
 module.exports = {

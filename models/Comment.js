@@ -11,26 +11,26 @@ Comment.init(
             allowNull: false,
             autoIncrement: true
         },
-        commentText: {
+        comment_body: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len:[1]
             }
         },
-        userId: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'user',
+                model: 'User',
                 key: 'id'
                 }
         },
-        postId: {
+        post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'post',
+            model: 'Post',
             key: 'id'
             }
         }
