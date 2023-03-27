@@ -5,10 +5,10 @@ const withAuth = require('../../utils/auth');
 //TODO ready for testing
 //Getting all the comments
 
-//TODO need to update findall function
+//*I think it works, i need some comments first to really test it
 router.get('/', async (req, res) => {
   try {
-    const commentData = await Comment.findall({});
+    const commentData = await Comment.findAll({});
     res.json(commentData);
   } catch (err) {
     console.log(err);
