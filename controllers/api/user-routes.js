@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 
-//TODO ready for testing
+//TODO all testing passed EXCEPT for log out - need to test when site is working
 
 
-//TODO find all users working
+//* find all users working
 //find all users
 router.get('/', async (req, res) => {
   try {
@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//* Find one user by id working
 //find one user by id
 router.get('/:id', async (req, res) => {
   try {
@@ -53,6 +54,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//* creating new user working
 //creating new user
 router.post('/', async (req, res) => {
   try {
@@ -73,6 +75,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//* log in working!
 //logging in user
 router.post('/login', async (req, res) => {
   try {
@@ -106,6 +109,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//TODO can't tell in insomnia if logout is working, need to test when have site working as whole
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
