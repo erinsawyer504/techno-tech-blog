@@ -11,8 +11,7 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         userId: req.session.userId
       },
-      attributes: [
-        'id', 'post_body', 'title'],
+      attributes: [ 'id', 'post_body', 'title'],
       include: [
         {
           model: Comment,
