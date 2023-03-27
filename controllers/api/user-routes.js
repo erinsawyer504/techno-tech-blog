@@ -2,8 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 
-//TODO all testing passed EXCEPT for log out - need to test when site is working
-
+//* All routes are working - USER-ROUTE should be done!
 
 //* find all users working
 //find all users
@@ -79,7 +78,6 @@ router.post('/', async (req, res) => {
 //logging in user
 router.post('/login', async (req, res) => {
   try {
-    console.log('Hey there!');
     const user = await User.findOne({
       where: {
         username: req.body.username,
@@ -110,7 +108,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-//TODO can't tell in insomnia if logout is working, need to test when have site working as whole
+//* Logout working!
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
