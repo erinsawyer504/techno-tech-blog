@@ -33,7 +33,7 @@ Comment.belongsTo(User, {
   // onDelete: 'CASCADE'
 });
 
-//comment belongs to one post
+// comment belongs to one post
 Comment.belongsTo(Post, {
   foreignKey: 'post_id',
   // onDelete: 'CASCADE'

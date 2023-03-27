@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-//TODO ready for testing
+//TODO create new post, update post and delete post not working
 
-//TODO Get all posts working
+//** Get all posts working
 // GETs all posts
 router.get('/', async (req, res) => {
   try {
@@ -34,6 +34,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//** Get post by ID working
 // GETs one post by id 
 router.get('/:id', async (req, res) => {
   try {
@@ -49,7 +50,7 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_body', 'user_id', 'post_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -68,6 +69,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//TODO doesn't work yet
 // this would be http://localhost:3001/api/posts
 //creates new post
 router.post('/', withAuth, async (req, res) => {
@@ -81,6 +83,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+//TODO doesn't work yet
 // this would be http://localhost:3001/api/posts/32uyfg5623
 //updates a post by ID
 router.put('/:id', withAuth, async (req, res) => {
@@ -101,6 +104,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+//TODO doesn't work yet
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = Post.destroy({
