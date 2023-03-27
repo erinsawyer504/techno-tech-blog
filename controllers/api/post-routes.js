@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
         },
       ]
     });
+    // const posts = postData.map((post) => post.get({ plain: true }));
     res.json(postData);
   } catch (err) {
     console.log(err);

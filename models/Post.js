@@ -31,6 +31,9 @@ Post.init(
                 model: 'User',
                 key: 'id'
             }
+        }, 
+        created_at: {
+            type: DataTypes.DATE,
         }
     },
     {

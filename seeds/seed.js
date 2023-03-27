@@ -12,9 +12,8 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-
-  const commentSeed = await Comment.bulkCreate(SeedCommentData);
   const postSeed = await Post.bulkCreate(SeedPostData);
+  const commentSeed = await Comment.bulkCreate(SeedCommentData);
 
   process.exit(0);
 };

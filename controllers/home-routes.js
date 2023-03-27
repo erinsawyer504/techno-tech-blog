@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
     const postData = await Post.findAll({
       attributes: [
-        'id', 'post_body', 'title',
+        'id', 'post_body', 'title', 'created_at'
       ],
       include: [
         {
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
     });
 
     const posts = postData.map(post => post.get({ plain: true }));
-
+    console.log("post: ", posts);
     res.render('all-posts', { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
