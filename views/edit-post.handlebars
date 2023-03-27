@@ -1,15 +1,23 @@
-{{!-- Edit and delete posts --}}
+{{!-- edits and deletes posts --}}
+<div class="card">
+    <h2 class="card-header edit-header">Edit Post</h2>
+</div>
 
-<form id="edit-post-form">
+<form id="edit-post-form" class="edit-form">
     <div>
         <input name="post-id" type="hidden" value="{{post.id}}">
-        <input name="post-title" type="text" value="{{post.title}}" />
+        <label for="post-title" class="form-label">Title</label>
+        <input name="post-title" type="text" value="{{post.title}}" class="form-input" />
     </div>
     <div>
-        <textarea name="post-body" type="text">{{post.post_body}}</textarea>
+        <label for="post-body" class="form-label">Body</label>
+        <textarea name="post-body" type="text" class="form-textarea">{{post.post_body}}</textarea>
     </div>
     <div>
-        <button type="submit" class="btn edit-post-form">Submit Post</button>
+        <button type="submit" class="btn edit-post-btn">Edit Post</button>
         <button type="button" class="btn delete-btn">Delete Post</button>
     </div>
 </form>
+
+
+  <script src="/js/edit.js"></script>

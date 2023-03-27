@@ -1,19 +1,22 @@
 {{!-- TODO: login not working properly --}}
 
-<form class="login-form">
-  <div>
-    <label for="user-login">Username:</label>
-    <input type="text" id="username-input-login" />
-  </div>
-  <div>
-    <label for="password-login">Password:</label>
-    <input type="password" id="password-input-login" />
-  </div>
-  <div>
-    <button class ="btn" type="submit" id="login-form">Login</button>
-  </div>
-  <div class ="sign-up">
+<div class="card">
+  <form class="login-form">
+    <div>
+      <label class="form-label" for="username-input-login">Username:</label>
+      <input class="form-input" type="text" id="username-input-login" />
+    </div>
+    <div>
+      <label class="form-label" for="password-input-login">Password:</label>
+      <input class="form-input" type="password" id="password-input-login" />
+    </div>
+    <div>
+      <button class="btn" type="submit" id="login-form">Login</button>
+    </div>
+    <div class="sign-up">
       New to this blog? <a href="/signup">Sign Up now!</a>
-  </div>
+    </div>
+  </form>
+</div>
 
   <script src="/js/login.js"></script>
