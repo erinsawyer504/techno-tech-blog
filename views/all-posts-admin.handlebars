@@ -1,0 +1,17 @@
+{{!-- TODO created post not showing up --}}
+{{!-- *edit post working --}}
+
+{{!-- showing all of my posts --}}
+<section class="list-group">
+  <h2 class="card-header">My Posts</h2>
+    {{#each posts as |post|}}
+      <div class="card-header">
+        <h2><a href="/dashboard/edit/{{id}}" class="card-link">{{post.title}}</a></h2>
+      </div>
+      <div class="card-body">
+          <p class="card-text">Posted by {{user.username}} on {{format_date created_at}}</p>
+        <h2><a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a></h2>
+      </div>
+    {{/each}}
+</section>
+
