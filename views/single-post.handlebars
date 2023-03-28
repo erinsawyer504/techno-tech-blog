@@ -1,0 +1,35 @@
+{{!-- TODO adding new comments not working --}}
+{{!-- Showing single post with comments --}}
+<section class="card">
+    <div class ="card-header">
+        <h2><a href="/post/{{post.id}}">{{post.title}}</a></h2>
+        <p class="card-text">Posted by {{post.user.username}} on {{format_date post.created_at}}</p>
+    </div>
+    <div class ="card-body">
+        <p>
+            {{post.body}}
+        </p>
+    </div>
+
+{{#if post.comments}}
+    <h2 class="card-header">Comments</h2>
+    {{#each post.comments as |comment| }}
+    <div class="card-header">Comment by: {{comment.user.username}} on {{format_date comment.created_at}}</div>
+        <div>
+            <p class="card-body">
+            {{body}}
+            </p>
+        </div>
+    {{/each}}
+{{/if}}
+<input type="hidden" id="post-id" value="{{post.id}}" />
+<div class="card">
+    <form class="card-body" id="new-comment-form">
+        <p class="form-label">Comment:</p>
+        <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
+        <button type="submit" class="btn">Submit:</button>
+    </form>
+</div>
+</section>
+
+<script src="/js/comment.js"></script>
