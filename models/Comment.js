@@ -33,6 +33,9 @@ Comment.init(
             model: 'Post',
             key: 'id'
             }
+        },
+        created_at: {
+            type: DataTypes.DATE,
         }
     },
     {
