@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-//TODO create new post, update post and delete post not working
+//TODO create new post, update post
 
 //** Get all posts working
 // GETs all posts

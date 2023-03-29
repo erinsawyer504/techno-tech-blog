@@ -64,7 +64,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         id: req.params.id
       },
       attributes: [
-        'id', 'post_body', 'title', 'created_at'
+        'id', 'title', 'post_body', 'created_at'
       ],
       include: [
         {
