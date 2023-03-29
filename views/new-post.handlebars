@@ -1,16 +1,16 @@
-{{!-- TODO not working --}}
+{{!-- * working!!! --}}
 {{!-- creates a new post --}}
 <section class="card">
   <h2 class="card-header">Create New Post</h2>
 
-  <form class="new-post-form">
+  <form id="new-post-form">
     <div>
       <label for="post-title" class="form-label">Title</label>
       <input type="text" id="post-title" name="post-title" class="form-input" />
     </div>
     <div>
       <label for="post-body" class="form-label">Body</label>
-      <textarea name="post-body" class="card-body form-textarea"></textarea>
+      <textarea name="post-body" id="post-body" class="card-body form-textarea"></textarea>
     </div>
     <button type="submit" class="btn">Create Post</button>
   </form>
