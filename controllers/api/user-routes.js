@@ -2,9 +2,6 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 
-//* All routes are working - USER-ROUTE should be done!
-
-//* find all users working
 //find all users
 router.get('/', async (req, res) => {
   try {
@@ -18,7 +15,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-//* Find one user by id working
 //find one user by id
 router.get('/:id', async (req, res) => {
   try {
@@ -53,7 +49,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//* creating new user working
 //creating new user
 router.post('/', async (req, res) => {
   try {
@@ -74,7 +69,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-//* log in working!
 //logging in user
 router.post('/login', async (req, res) => {
   try {
@@ -108,7 +102,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-//* Logout working!
+//logging out user
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

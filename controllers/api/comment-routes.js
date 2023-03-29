@@ -3,10 +3,8 @@ const { Comment, Post, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 
-//*testing complete for this section
 
 //Getting all the comments
-//*getting comments, this is working 
 router.get('/', async (req, res) => {
   try {
     const commentData = await Comment.findAll({});
@@ -17,7 +15,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-//*creating new comments working
 //Creates new comments
 router.post('/', withAuth, async (req, res) => {
   try {

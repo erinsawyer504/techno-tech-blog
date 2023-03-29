@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 
-//*all working
-// get all posts for homepage
+
+// get all posts for homepage and renders to all-posts.handlebars
 router.get('/', async (req, res) => {
   try {
     console.log(req.session);
@@ -38,11 +38,10 @@ router.get('/', async (req, res) => {
 
 
 
-// get single post
+// get single post and renders to the single-post.handlebars
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      // helping you out with the include here, no changes necessary
       include: [
         User,
         {
@@ -55,7 +54,6 @@ router.get('/post/:id', async (req, res) => {
     if (postData) {
       // serialize the data
       const post = postData.get({ plain: true });
-      // which view should we render for a single-post?
       res.render('single-post', { post, loggedIn: req.session.loggedIn });
     } else {
       res.status(404).end();
@@ -65,7 +63,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// giving you the login and signup route pieces below, no changes needed.
+// login and signup route 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

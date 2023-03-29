@@ -2,10 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-//* all working!
-
-//** Get all posts working
-// GETs all posts
+// Gets all posts
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -35,8 +32,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//** Get post by ID working
-// GETs one post by id 
+// Gets one post by id 
 router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findOne({
@@ -70,8 +66,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//*create new post working
-// this would be http://localhost:3001/api/posts
 //creates new post
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
@@ -84,8 +78,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-//* update post working
-// this would be http://localhost:3001/api/posts/32uyfg5623
 //updates a post by ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
@@ -106,7 +98,6 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 
-//* Delete works!
 //Deletes a post
 router.delete('/:id', withAuth, async (req, res) => {
   try {

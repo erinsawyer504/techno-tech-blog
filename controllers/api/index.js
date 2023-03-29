@@ -10,4 +10,3 @@ router.use('/comment', commentRoutes);
 
 module.exports = router;
 
-//* nothing to add
