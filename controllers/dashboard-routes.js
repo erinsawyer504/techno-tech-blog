@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 const withAuth = require('../utils/auth');
 
-//TODO ready for testing
+//* all working!
 
-//TODO need to test
+//* working!
 router.get('/', withAuth, async (req, res) => {
   try {
     // store the results of the db query in a variable called postData. should use something that "finds all" from the Post model. may need a where clause!
@@ -43,7 +43,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-//TODO need to test
+//*working
 
 //rendering new posts
 router.get('/new', withAuth, (req, res) => {
@@ -54,7 +54,7 @@ router.get('/new', withAuth, (req, res) => {
   });
 });
 
-//TODO need to test
+//*working
 //edit posts by ID
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {

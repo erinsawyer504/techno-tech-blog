@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 
-//TODO ready for testing
+//*all working
 // get all posts for homepage
 router.get('/', async (req, res) => {
   try {

@@ -2,10 +2,11 @@ const router = require('express').Router();
 const { Comment, Post, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-//TODO ready for testing
-//Getting all the comments
 
-//*I think it works, i need some comments first to really test it
+//*testing complete for this section
+
+//Getting all the comments
+//*getting comments, this is working 
 router.get('/', async (req, res) => {
   try {
     const commentData = await Comment.findAll({});
@@ -16,6 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//*creating new comments working
 //Creates new comments
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -25,6 +27,7 @@ router.post('/', withAuth, async (req, res) => {
     });
     res.json(newComment);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

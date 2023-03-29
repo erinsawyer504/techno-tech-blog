@@ -1,5 +1,5 @@
-{{!-- TODO adding new comments not working --}}
-{{!-- TODO need to add body of post and body of comment --}}
+{{!-- *adding comments working --}}
+
 {{!-- Showing single post with comments --}}
 <section class="card">
     <div class ="card-header">
@@ -8,7 +8,7 @@
     </div>
     <div class ="card-body">
         <p>
-            {{post.body}}
+            {{post.post_body}}
         </p>
     </div>
 
@@ -18,7 +18,7 @@
     <div class="card-header">Comment by: {{comment.user.username}} on {{format_date comment.created_at}}</div>
         <div>
             <p class="card-body">
-            {{body}}
+            {{comment_body}}
             </p>
         </div>
     {{/each}}

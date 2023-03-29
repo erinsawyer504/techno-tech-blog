@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-//TODO create new post, update post
+//* all working!
 
 //** Get all posts working
 // GETs all posts
@@ -70,7 +70,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-//TODO doesn't work yet
+//*create new post working
 // this would be http://localhost:3001/api/posts
 //creates new post
 router.post('/', withAuth, async (req, res) => {
@@ -84,7 +84,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-//TODO doesn't work yet
+//* update post working
 // this would be http://localhost:3001/api/posts/32uyfg5623
 //updates a post by ID
 router.put('/:id', withAuth, async (req, res) => {
