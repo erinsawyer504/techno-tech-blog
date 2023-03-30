@@ -5,7 +5,7 @@ This project is a blog where anyone can view posts, but in order to create posts
 
 ## Links
 - [github repo](https://github.com/erinsawyer504/techno-tech-blog)
-- [Link to Heroku](https://https://immense-anchorage-45274.herokuapp.com/)
+- [Link to Heroku](https://immense-anchorage-45274.herokuapp.com/)
 
 ## Table of Contents
 - [Installation](#installation)  
