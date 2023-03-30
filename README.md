@@ -1,11 +1,11 @@
 # Techno-Tech-Blog
 
 ## Description
-This project is a blog where anyone can view posts, but in order to create posts or add comments the user can sign into their account or sign up if they do not have an account.  The user can also view/edit/delete their own posts; as well as, add comments to other people's posts.  This project uses node.js, express.js, sequelize, mysql, and handlebars to create the blog. 
+This project is a blog where anyone can view posts, but in order to create posts or add comments the user can sign into their account or sign up if they do not have an account.  The user can also view/edit/delete their own posts; as well as, add comments to other people's posts.  This project uses node.js, express.js, sequelize, mysql, and handlebars to create the blog!
 
 ## Links
 - [github repo](https://github.com/erinsawyer504/techno-tech-blog)
-- [Link to Heroku](https://needtoadd)
+- [Link to Heroku](https://https://immense-anchorage-45274.herokuapp.com/)
 
 ## Table of Contents
 - [Installation](#installation)  
